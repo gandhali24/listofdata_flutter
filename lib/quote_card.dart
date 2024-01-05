@@ -24,31 +24,77 @@ class QuoteCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Text(
-              quote.text,
+              quote.title.toString(),
               style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.grey[600],
+                fontSize: 22.0,
+                color: Colors.black,
               ),
             ),
 
             SizedBox(height: 6.0),
             Text(
-              quote.author,
+              quote.text.toString(),
               style: TextStyle(
-                  fontSize: 14.0,
+                  fontSize: 18.0,
                   color: Colors.grey[800]
               ),
             ),
-            SizedBox(height: 8.0),
-            TextButton.icon(
-                onPressed: delete,
-                label: Text('Delete Quote'),
-                icon: Icon(Icons.delete),
+            SizedBox(height: 6.0),
+            Text(
+              quote.ingredient.toString(),
+              style: TextStyle(
+                  fontSize: 15.0,
+                  color: Colors.blueAccent[800]
+              ),
+            ),
+
+            SizedBox(height:15.0),
+            Image.network(
+              quote.image_url.toString(),
+              width: 200,
+              height: 200,
 
 
-            )],
-        ),
+            ),
+            // SizedBox(height: 6.0),
+            // Align(
+            //     alignment: Alignment.topRight,
+            // child:
+            //
+            // Text(
+            //   quote.author.toString(),
+            //   style: TextStyle(
+            //       fontSize: 14.0,
+            //       color: Colors.grey[800]
+            //   ),
+            // ),
+            // ),
+
+      SizedBox(height: 4.0),
+      TextButton.icon(
+        onPressed: delete,
+        label: Text('Favorite',style: TextStyle(
+            color: Colors.redAccent,
+          fontSize: 20
+
+        )),
+
+        icon: Icon(Icons.favorite,color: Colors.red),
+
       ),
+
+
+      //   SizedBox(height: 4.0),
+      //       TextButton.icon(
+      //           onPressed: delete,
+      //           label: Text('Delete Quote'),
+      //           icon: Icon(Icons.delete),
+      //
+      //
+      //       )
+          ],
+         ),
+       ),
 
 
     );
